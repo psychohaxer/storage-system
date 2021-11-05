@@ -1,6 +1,14 @@
 <?php
     require "core/User.php";
     $user = new User();
+
+    if(isset($_POST['submit'])){
+        $barcode=$_POST['barcode'];
+        $item_name=$_POST['item_name'];
+        $item_qty=$_POST['item_qty'];
+        $user->create_item($barcode, $item_name, $item_qty);
+        header("entry.php");
+    }
     include "components/dash_header.php";
 ?>
     
