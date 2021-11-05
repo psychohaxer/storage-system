@@ -9,7 +9,7 @@
 
 		if(mysqli_num_rows($a) > 0){
 			$row = mysqli_fetch_array($a);
-			$_SESSION['type'] = $row[3];
+			$_SESSION['type'] = $row[2];
 			$_SESSION['username'] = $row[1];
 			$_SESSION['islogin'] = true;
 			
