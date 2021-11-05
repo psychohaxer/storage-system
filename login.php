@@ -3,7 +3,7 @@
 ?>
 
 <br><br><br><br>
-<form method="POST" action="../operation/ceklogin.php">
+<form method="POST" action="core/verification.php">
 			<div class="container" style="color:black" id="logincont">
 				<table align="center" border="0px" style="margin:0px auto;";>
 					<tr>
@@ -18,7 +18,7 @@
 						<td colspan="2" align="center"><br><br><button type="submit" name="submit" id="black" class="yellowbutton">Login</button></td>
 					</tr>
 					<tr>
-						<td colspan="2" align="center" id="deftext"><br><input type="checkbox" name="remember" id="remember"><label for = "remember">Remember me</label></td>
+						<td colspan="2" align="center" id="deftext"><br><input type="checkbox" name="remember" id="remember"><label for = "remember"> Remember me</label></td>
 					</tr>
 				</table>
 			</div>

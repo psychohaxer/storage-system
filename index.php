@@ -1,4 +1,3 @@
 <?php    
-    header("location:homepage.php");
-
+    header("location:core/checker.php");
 ?>

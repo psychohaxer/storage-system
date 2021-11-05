@@ -1,5 +1,6 @@
 <?php
-    if(!isset($_SESSION["type"])){
+    session_start();
+    if (!isset($_SESSION['islogin'])){
         header("homepage.php");
     }
 ?>

@@ -1,32 +1,15 @@
 <?php
-	include 'connect.php';
-	
-	if(isset($_POST['username'])){
-		$username = $_POST['username'];
-		$password = md5($_POST['password']);
-		
-		$a = mysqli_query($connect, "SELECT * from users WHERE username='".$username."' AND password = '".$password."'");
+	session_start();
 
-		if(mysqli_num_rows($a) > 0){
-			$row = mysqli_fetch_array($a);
-			$_SESSION['type'] = $row[2];
-			$_SESSION['username'] = $row[1];
-			$_SESSION['islogin'] = true;
-			
-			if($_SESSION['type'] == "admin"){
-				header("location:../dashboard.php");
-			}
-			else if($_SESSION['type'] == "kepala"){
-				header("location:../dashboard.php");
-			}
-		}
+	include 'User.php';
+	$user = new User();
+
+    $username = $_POST['username'];
+    $password = md5($_POST['password']);
+    
+    $user->check_login($username,$password);
 		
-		else{
-			header("location:../login.php");
-		}
-		
-		if (isset($_POST['remember'])) {
-        	setcookie('login','true', time()+60);
-      	}
+	if (isset($_POST['remember'])) {
+		setcookie('login','true', time()+60);
 	}
 ?>

@@ -4,6 +4,7 @@
     class User{
         private $usrcon;
         private $data;
+        public $logged_in;
 
         function __construct(){
             $database = new Database();
@@ -19,21 +20,20 @@
             if($check > 0){
 				$row = $result->fetch_assoc();
 				$_SESSION["username"] = $row['username'];
+                $_SESSION["password"] = $row['password'];
 				$_SESSION["type"] = $row['type'];
 				$_SESSION["islogin"] = true;
 
-				header("location:index.php");
-				return true;
+				header("location:../dashboard.php");
 			}
 			else {
-				header("location:login.php");
-				return false;
+				header("location:../login.php");
 			}
         }
 
         public function logout() {
-			session_destroy();
-			header("location:index.php");
+			$_SESSION["islogin"] = false;
+			header("location:../homepage.php");
 		}
 
         // CREATE user

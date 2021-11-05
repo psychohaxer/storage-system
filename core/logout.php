@@ -1,9 +1,5 @@
 <?php
-    include 'User.php';
-
-    $user= new user();
-    $user->logout();
-
-    setcookie('login','',time()-3600);
+    session_start();
+    session_destroy();
     header("location:../homepage.php");
 ?>

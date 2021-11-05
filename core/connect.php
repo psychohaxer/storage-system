@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	$conn_host = "localhost";
 	$conn_username = "root";
 	$conn_password = "";
